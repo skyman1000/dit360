@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+
+# Local inference and experiment outputs
+/result*.png
+/outputs/
+/checkpoints/
+/model_saved/
+/mix_model_saved/
+/lora_output/
+
+# Local datasets and model weights
+/data/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+
+# Local environment files
+.env
+.venv/
+

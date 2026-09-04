@@ -2,9 +2,19 @@ from src.pipeline import DiT360Pipeline
 import torch
 
 device = torch.device("cuda:0")
-pipe = DiT360Pipeline.from_pretrained("black-forest-labs/FLUX.1-dev", torch_dtype=torch.float16).to(device)
-pipe.load_lora_weights("Insta360-Research/DiT360-Panorama-Image-Generation")
+# pipe = DiT360Pipeline.from_pretrained("black-forest-labs/FLUX.1-dev", torch_dtype=torch.float16).to(device)
+# pipe.load_lora_weights("Insta360-Research/DiT360-Panorama-Image-Generation")
+pipe = DiT360Pipeline.from_pretrained(
+    "black-forest-labs/FLUX.1-dev",
+    torch_dtype=torch.float16,
+    local_files_only=True,
+).to(device)
 
+pipe.load_lora_weights(
+    "Insta360-Research/DiT360-Panorama-Image-Generation",
+    weight_name="adapter_model.safetensors",
+    local_files_only=True,
+)
 image = pipe(
     "This is a panorama. The image shows a medieval castle stands proudly on a hilltop surrounded by autumn forests, with golden light spilling across the landscape.",
     width=2048,
