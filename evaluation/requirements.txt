@@ -1,0 +1,10 @@
+# Install into a separate environment with a matching torch/torchvision pair.
+# Record actual resolved versions in each report; this is not DiT360's environment.
+numpy
+scipy
+Pillow
+pytorch-fid==0.3.0
+torchmetrics==1.7.1
+torch-fidelity==0.3.0
+py360convert>=1.0,<2
+pyiqa==0.1.14.1

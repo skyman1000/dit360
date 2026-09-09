@@ -24,3 +24,7 @@ __pycache__/
 # Local runtime caches and Slurm logs
 /.cache/
 /slurm-*.out
+
+# Local reports and editor settings
+/reports/
+/.vscode/
